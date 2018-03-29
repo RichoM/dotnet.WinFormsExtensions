@@ -49,9 +49,14 @@ namespace System.Windows.Forms
 
         public void LogError(Exception ex)
         {
+            LogError("ERROR!", ex);
+        }
+
+        public void LogError(string message, Exception ex)
+        {
             WithTextColor(Color.Red, () =>
             {
-                Log("ERROR!");
+                Log(message);
                 Log(ex.ToString());
             });
         }

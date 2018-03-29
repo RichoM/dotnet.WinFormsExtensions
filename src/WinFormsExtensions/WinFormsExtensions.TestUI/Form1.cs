@@ -53,7 +53,7 @@ namespace WinFormsExtensions.TestUI
                 }
                 catch (Exception ex)
                 {
-                    logger.LogError(ex);
+                    logger.LogError("Excepción esperada", ex);
                 }
 
                 this.Invoke(() =>
