@@ -7,10 +7,11 @@
     <ProjectGuid>{9B4B12AB-F44E-490F-9047-4D3344AEDE0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormsExtensions</RootNamespace>
-    <AssemblyName>WinFormsExtensions</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>RichoM.WinFormsExtensions</RootNamespace>
+    <AssemblyName>RichoM.WinFormsExtensions</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
