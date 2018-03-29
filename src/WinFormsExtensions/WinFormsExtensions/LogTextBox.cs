@@ -23,24 +23,7 @@ namespace System.Windows.Forms
 
         public Color TextColor { get; set; }
         public string IndentText { get; set; }
-
-        private T Invoke<T>(Func<T> function)
-        {
-            T result = default(T);
-            Invoke(() =>
-            {
-                try
-                {
-                    result = function();
-                }
-                catch (Exception ex)
-                {
-                    LogError(ex);
-                }
-            });
-            return result;
-        }
-
+        
         private void Invoke(Action action)
         {
             base.Invoke(action);
