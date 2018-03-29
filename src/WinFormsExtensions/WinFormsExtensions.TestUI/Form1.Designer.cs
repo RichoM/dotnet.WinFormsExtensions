@@ -31,6 +31,7 @@
             this.testInputBoxButton = new System.Windows.Forms.Button();
             this.testLogTextBoxButton = new System.Windows.Forms.Button();
             this.logger = new System.Windows.Forms.LogTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // testInputBoxButton
@@ -45,7 +46,7 @@
             // 
             // testLogTextBoxButton
             // 
-            this.testLogTextBoxButton.Location = new System.Drawing.Point(14, 58);
+            this.testLogTextBoxButton.Location = new System.Drawing.Point(12, 58);
             this.testLogTextBoxButton.Name = "testLogTextBoxButton";
             this.testLogTextBoxButton.Size = new System.Drawing.Size(154, 39);
             this.testLogTextBoxButton.TabIndex = 2;
@@ -65,11 +66,22 @@
             this.logger.TabIndex = 1;
             this.logger.TextColor = System.Drawing.Color.Black;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 103);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 39);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Test Invoke";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 497);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.testLogTextBoxButton);
             this.Controls.Add(this.logger);
             this.Controls.Add(this.testInputBoxButton);
@@ -84,6 +96,7 @@
         private System.Windows.Forms.Button testInputBoxButton;
         private System.Windows.Forms.LogTextBox logger;
         private System.Windows.Forms.Button testLogTextBoxButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -24,11 +24,6 @@ namespace System.Windows.Forms
         public Color TextColor { get; set; }
         public string IndentText { get; set; }
         
-        private void Invoke(Action action)
-        {
-            base.Invoke(action);
-        }
-
         public void Log(string str, params object[] args)
         {
             Log(string.Format(str, args));
@@ -36,7 +31,7 @@ namespace System.Windows.Forms
 
         public void Log(string str)
         {
-            Invoke(() =>
+            this.Invoke(() =>
             {
                 // INFO(Richo): Code for text coloring taken from: https://stackoverflow.com/a/1926822
                 textBox.SelectionStart = textBox.TextLength;

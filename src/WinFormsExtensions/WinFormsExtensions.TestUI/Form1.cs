@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,6 +41,34 @@ namespace WinFormsExtensions.TestUI
                     logger.LogNewLine();
                 });
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    Text = "Esto debería fallar!";
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex);
+                }
+
+                this.Invoke(() =>
+                {
+                    Text = "Esto no debería fallar porque está adentro del Invoke(..)";                    
+                });
+
+                logger.Log("{0}) Esperando 1 segundo...", DateTime.Now.ToString("o"));
+                Thread.Sleep(1000);
+                this.Invoke(() =>
+                {
+                    Text = Guid.NewGuid().ToString();
+                });
+                logger.Log("{0}) Espera finalizada", DateTime.Now.ToString("o"));
+            });
         }
     }
 }
