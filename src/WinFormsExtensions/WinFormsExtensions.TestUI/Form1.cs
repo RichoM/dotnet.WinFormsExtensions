@@ -21,5 +21,25 @@ namespace WinFormsExtensions.TestUI
         {
             MessageBox.Show("Yo soy: " + InputBox.Ask("Quién soy?"));
         }
+
+        private void testLogTextBoxButton_Click(object sender, EventArgs e)
+        {
+            logger.Log("Prueba...");
+            for (int i = 0; i < 45; i++)
+            {
+                logger.WithTextColor(i % 2 == 0 ? Color.Blue : Color.Red, () =>
+                {
+                    logger.Log("{0}) Indent level {1}", DateTime.Now, i);
+                    logger.Indent(i, () =>
+                    {
+                        for (int j = 0; j < 10; j++)
+                        {
+                            logger.Log("{0}", j + i);
+                        }
+                    });
+                    logger.LogNewLine();
+                });
+            }
+        }
     }
 }
