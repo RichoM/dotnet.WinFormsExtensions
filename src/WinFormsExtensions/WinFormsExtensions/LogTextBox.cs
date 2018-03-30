@@ -81,7 +81,7 @@ namespace System.Windows.Forms
             }
         }
 
-        public void LogNewLine()
+        public void NewLine()
         {
             Log("");
         }

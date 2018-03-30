@@ -38,7 +38,7 @@ namespace WinFormsExtensions.TestUI
                             logger.Log("{0}", j + i);
                         }
                     });
-                    logger.LogNewLine();
+                    logger.NewLine();
                 });
             }
         }
