@@ -75,5 +75,15 @@ namespace WinFormsExtensions.TestUI
         {
             logger.Clear();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            logger.Indent(3, () =>
+            {
+                logger.Log("Este es un texto con\nsaltos de línea en\r\ncualquier lugar.\n\r\nDebería andar bien la indentación.");
+                logger.NewLine();
+                logger.Log("Fin del comunicado");
+            });
+        }
     }
 }

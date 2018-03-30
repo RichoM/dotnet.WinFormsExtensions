@@ -36,13 +36,16 @@ namespace System.Windows.Forms
                 // INFO(Richo): Code for text coloring taken from: https://stackoverflow.com/a/1926822
                 textBox.SelectionStart = textBox.TextLength;
                 textBox.SelectionLength = 0;
-                textBox.SelectionColor = TextColor;
-                for (int i = 0; i < indent; i++)
+                textBox.SelectionColor = TextColor;                
+                foreach (var line in str.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None))
                 {
-                    textBox.AppendText(IndentText);
+                    for (int i = 0; i < indent; i++)
+                    {
+                        textBox.AppendText(IndentText);
+                    }
+                    textBox.AppendText(line);
+                    textBox.AppendText(Environment.NewLine);
                 }
-                textBox.AppendText(str);
-                textBox.AppendText(Environment.NewLine);
                 textBox.ScrollToCaret();
             });
         }
