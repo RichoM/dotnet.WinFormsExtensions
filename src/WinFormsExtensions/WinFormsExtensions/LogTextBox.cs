@@ -86,6 +86,11 @@ namespace System.Windows.Forms
             Log("");
         }
 
+        public void Clear()
+        {
+            textBox.Clear();
+        }
+
         public void WithTextColor(Color color, Action action)
         {
             Color old = TextColor;

@@ -70,5 +70,10 @@ namespace WinFormsExtensions.TestUI
                 logger.Log("{0}) Espera finalizada", DateTime.Now.ToString("o"));
             });
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            logger.Clear();
+        }
     }
 }
