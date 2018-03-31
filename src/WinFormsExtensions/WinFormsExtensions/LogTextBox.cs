@@ -33,12 +33,12 @@ namespace System.Windows.Forms
         {
             this.Invoke(() =>
             {
-                // INFO(Richo): Code for text coloring taken from: https://stackoverflow.com/a/1926822
-                textBox.SelectionStart = textBox.TextLength;
-                textBox.SelectionLength = 0;
-                textBox.SelectionColor = TextColor;                
                 foreach (var line in str.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None))
                 {
+                    // INFO(Richo): Code for text coloring taken from: https://stackoverflow.com/a/1926822
+                    textBox.SelectionStart = textBox.TextLength;
+                    textBox.SelectionLength = 0;
+                    textBox.SelectionColor = TextColor;
                     for (int i = 0; i < indent; i++)
                     {
                         textBox.AppendText(IndentText);
