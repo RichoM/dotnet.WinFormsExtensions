@@ -91,7 +91,7 @@ namespace System.Windows.Forms
 
         public void Clear()
         {
-            textBox.Clear();
+            this.Invoke(textBox.Clear);
         }
 
         public void WithTextColor(Color color, Action action)

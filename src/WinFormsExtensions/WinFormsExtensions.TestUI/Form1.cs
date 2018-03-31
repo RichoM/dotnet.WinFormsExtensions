@@ -73,7 +73,10 @@ namespace WinFormsExtensions.TestUI
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            logger.Clear();
+            Task.Run(() =>
+            {
+                logger.Clear();
+            });
         }
 
         private void button2_Click(object sender, EventArgs e)
